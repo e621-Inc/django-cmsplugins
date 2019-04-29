@@ -10,7 +10,7 @@ from django.utils.translation import ugettext_lazy as _
 def get_indicator_hidden(request, instance):
     html = ''
     is_visible = getattr(instance, 'is_visible', True)
-    if request.toolbar.edit_mode and not is_visible:
+    if request.toolbar.edit_mode_active and not is_visible:
         name = _('hidden')
         css_class = 'plugin-indicator-hidden'
         html = '<span class="{}">{}</span>'.format(
