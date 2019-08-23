@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 import os
 from setuptools import find_packages, setup
 
@@ -24,7 +22,7 @@ setup(
     packages=find_packages(exclude=['testproject', 'testproject.*']),
     install_requires=(
         'cssselect>=0.9.2',
-        'Django>=1.11,<2.0',
+        'Django>=2.1',
         'django-cms>=3.4',
         'django-filer>=1.3.0',
         'googlemaps>=2.4.4',
