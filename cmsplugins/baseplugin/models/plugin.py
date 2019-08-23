@@ -57,6 +57,7 @@ class BasePlugin(CMSPlugin):
         Page,
         editable=False,
         null=True,
+        on_delete=models.SET_NULL,
     )
 
     class Meta:
