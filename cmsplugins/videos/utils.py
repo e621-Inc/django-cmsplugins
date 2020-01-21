@@ -30,9 +30,9 @@ class VideoMixin(object):
     def __repl(self, m):
         repl = m.groupdict()
         result = ''
-        if repl.has_key('youtube_id'):
+        if 'youtube_id' in repl:
             result = repl['youtube_id'] + '__and__' + 'youtube'
-        elif repl.has_key('vimeo_id'):
+        elif 'vimeo_id' in repl:
             result = repl['vimeo_id'] + '__and__' + 'vimeo'
         return result
 

@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'mptt',
     'polymorphic',
     'text_ckeditor',
-    'text_ckeditor.links',
+    'text_ckeditor.text_ckeditor_links',
 
     'cms',
     'menus',
@@ -127,7 +127,7 @@ DATABASES = {
 
 
 AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'}, # NOQA
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},  # NOQA
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},  # NOQA
     {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},  # NOQA
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},  # NOQA

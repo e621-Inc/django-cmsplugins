@@ -59,6 +59,7 @@ class TeaserWrap(CMSPlugin):
         Page,
         editable=False,
         null=True,
+        on_delete=models.SET_NULL,
         related_name="cms_teasers_wrap_set"
     )
 
@@ -129,7 +130,7 @@ class Teaser(CMSPlugin):
                 # TODO do this the proper way
                 try:
                     return img_obj.image
-                except: # NOQA
+                except:  # NOQA
                     return ''
 
     def get_name(self):
@@ -137,12 +138,11 @@ class Teaser(CMSPlugin):
             return self.name
         elif self.link_cms:
             name_obj = self.get_page_info()
-            print name_obj
             if name_obj:
                 # TODO do this the proper way
                 try:
                     return name_obj.name
-                except: # NOQA
+                except:  # NOQA
                     return ''
 
     def get_body(self):
@@ -154,7 +154,7 @@ class Teaser(CMSPlugin):
                 # TODO do this the proper way
                 try:
                     return body_obj.abstract or body_obj.description
-                except: # NOQA
+                except:  # NOQA
                     return ''
 
     def copy_relations(self, original):
