@@ -1,5 +1,5 @@
 cssselect
-Django>=2.2,<3.0
+Django>=2.2.12,<2.3
 django-cms>=3.7,<3.8
 django-compressor
 django-libsass
