@@ -1,7 +1,4 @@
-from __future__ import unicode_literals
-
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
@@ -10,10 +7,23 @@ from filer.fields.image import FilerImageField
 
 
 class Slider(BasePlugin):
-    autoplay = models.BooleanField(_('auto play'), default=True)
-    loop = models.BooleanField(_('loop'), default=False)
-    arrows = models.BooleanField(_('show arrows'), default=False)
-    indicators = models.BooleanField(_('show indicators'), default=False)
+
+    autoplay = models.BooleanField(
+        _('auto play'),
+        default=True
+    )
+    loop = models.BooleanField(
+        _('loop'),
+        default=False
+    )
+    arrows = models.BooleanField(
+        _('show arrows'),
+        default=False
+    )
+    indicators = models.BooleanField(
+        _('show indicators'),
+        default=False
+    )
 
     @property
     def html_data(self):
@@ -42,7 +52,6 @@ class Slider(BasePlugin):
         return getattr(self, 'plugin_link', None)
 
 
-@python_2_unicode_compatible
 class Slide(BasePlugin):
 
     name_sub = models.CharField(

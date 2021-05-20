@@ -1,10 +1,10 @@
-from __future__ import unicode_literals
+
 
 from django import forms
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
-from cmsplugins.baseplugin.utils import get_indicator_hidden, load_object
+from cmsplugins.baseplugin.utils import get_indicator_hidden, get_model
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
 
@@ -15,7 +15,7 @@ from .models import Slider, Slide
 class SliderLinkInlineForm(forms.ModelForm):
     class Meta:
         fields = '__all__'
-        model = load_object(conf.SLIDER_LINK_MODEL)
+        model = get_model(conf.SLIDER_LINK_MODEL)
         widgets = {
             'abstract': forms.Textarea(attrs={'rows': 3})
         }
@@ -26,13 +26,13 @@ class SliderLinkInline(admin.StackedInline):
     max_num = 1
     fields = conf.SLIDER_LINK_FIELDS
     form = SliderLinkInlineForm
-    model = load_object(conf.SLIDER_LINK_MODEL)
+    model = get_model(conf.SLIDER_LINK_MODEL)
 
 
 class SlideLinkInlineForm(forms.ModelForm):
     class Meta:
         fields = '__all__'
-        model = load_object(conf.SLIDE_LINK_MODEL)
+        model = get_model(conf.SLIDE_LINK_MODEL)
         widgets = {
             'abstract': forms.Textarea(attrs={'rows': 3})
         }
@@ -43,7 +43,7 @@ class SlideLinkInline(admin.StackedInline):
     max_num = 1
     fields = conf.SLIDE_LINK_FIELDS
     form = SlideLinkInlineForm
-    model = load_object(conf.SLIDE_LINK_MODEL)
+    model = get_model(conf.SLIDE_LINK_MODEL)
 
 
 class SliderPluginForm(forms.ModelForm):
@@ -69,7 +69,7 @@ class SliderPlugin(CMSPluginBase):
     exclude = conf.SLIDER_EXCLUDE
     fieldsets = conf.SLIDER_FIELDSETS
     form = SliderPluginForm
-    inlines = [load_object(i) for i in conf.SLIDER_INLINES]
+    inlines = [get_model(i) for i in conf.SLIDER_INLINES]
     model = Slider
     module = _('content')
     name = _('slider')
@@ -134,7 +134,7 @@ class SliderSlidePlugin(CMSPluginBase):
     exclude = conf.SLIDERSLIDE_EXCLUDE
     fieldsets = conf.SLIDERSLIDE_FIELDSETS
     form = SliderSlidePluginForm
-    inlines = [load_object(i) for i in conf.SLIDE_INLINES]
+    inlines = [get_model(i) for i in conf.SLIDE_INLINES]
     model = Slide
     module = _('content')
     name = _('slide')

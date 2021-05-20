@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 import os
 
@@ -32,6 +32,7 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 ]
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 THUMBNAIL_QUALITY = 95
 

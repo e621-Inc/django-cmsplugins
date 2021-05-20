@@ -1,14 +1,10 @@
-from __future__ import unicode_literals
-
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.text import slugify
 from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin, Page
 
 
-@python_2_unicode_compatible
 class BasePlugin(CMSPlugin):
     css_class = models.CharField(
         max_length=200,
