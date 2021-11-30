@@ -6,6 +6,7 @@ from cms.models import CMSPlugin, Page
 
 
 class BasePlugin(CMSPlugin):
+
     css_class = models.CharField(
         max_length=200,
         blank=True,

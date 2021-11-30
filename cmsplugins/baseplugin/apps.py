@@ -7,4 +7,4 @@ class BasePluginConfig(AppConfig):
 
     default_auto_field = 'django.db.models.AutoField'
     name = 'cmsplugins.baseplugin'
-    verbose_name = _('Base Plugin')
+    verbose_name = _('CMS Plugins')

@@ -1,5 +1,3 @@
-
-
 from .link import BaseLink
 from .plugin import BasePlugin
 

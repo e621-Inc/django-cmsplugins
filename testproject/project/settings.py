@@ -15,6 +15,8 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ALLOWED_HOSTS = []
 ROOT_URLCONF = 'project.urls'
 WSGI_APPLICATION = 'project.wsgi.application'
@@ -40,6 +42,7 @@ THUMBNAIL_QUALITY = 95
 INSTALLED_APPS = [
 
     'project',
+    'cmsplugins.baseplugin',
     'cmsplugins.columns',
     'cmsplugins.headers',
     'cmsplugins.iframes',
@@ -51,6 +54,7 @@ INSTALLED_APPS = [
     'cmsplugins.text',
     'cmsplugins.videos',
 
+    'admin_styles',
     'compressor',
     'easy_thumbnails',
     'filer',
@@ -63,7 +67,6 @@ INSTALLED_APPS = [
     'menus',
     'sekizai',
     'treebeard',
-    'djangocms_admin_style',
 
     'django.contrib.redirects',
     'django.contrib.admin',

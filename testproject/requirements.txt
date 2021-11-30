@@ -1,6 +1,6 @@
 cssselect
-Django>2.3,<3.3
-django-cms>3.7,<3.9
+Django>=3.2,<3.3
+django-cms>=3.9,<4
 django-compressor
 django-libsass
 django-filer
@@ -9,4 +9,6 @@ easy_thumbnails
 googlemaps
 lxml
 
+
 -e git+https://github.com/rouxcode/django-text-ckeditor@master#egg=django-text-ckeditor
+-e git+https://github.com/rouxcode/django-admin-styles@develop#egg=django-admin-styles

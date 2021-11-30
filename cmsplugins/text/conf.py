@@ -25,14 +25,15 @@ CKEDITOR_FIELDSETS = getattr(
     settings,
     'TEXT_CKEDITOR_FIELDSETS',
     [
-        (_('content'), {
+        (None, {
             'classes': ['section'],
             'fields': ['body'],
         }),
         (_('settings'), {
             'classes': [
                 'section',
-                'collapse',
+                'collapsable',
+                'closed',
             ],
             'fields': [
                 'css_class',
