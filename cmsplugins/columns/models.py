@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.html import mark_safe
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from cmsplugins.baseplugin.models import BasePlugin
 from cmsplugins.baseplugin.utils import get_str_from_tuple

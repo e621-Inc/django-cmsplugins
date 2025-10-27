@@ -1,7 +1,7 @@
 from importlib import import_module
 
 from django.utils.html import mark_safe
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 def get_indicator_hidden(request, instance):
